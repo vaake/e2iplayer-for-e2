@@ -23,4 +23,5 @@ git:
 script:
 - echo compiling e2iplayer plugin
 - python -m compileall .
+- find . -type f -name "*.po" -exec msgfmt {} -o {}.mo \;
 - echo done!
