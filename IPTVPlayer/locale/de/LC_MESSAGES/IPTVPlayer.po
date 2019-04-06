@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IPTVPlayer\n"
 "POT-Creation-Date: 2019-03-04 17:12+0100\n"
-"PO-Revision-Date: 2019-03-28 14:29+0100\n"
+"PO-Revision-Date: 2019-04-03 15:00+0200\n"
 "Last-Translator: doubledip\n"
 "Language-Team: IPTVPlayer\n"
 "Language: de_DE\n"
@@ -3941,7 +3941,7 @@ msgid "e-mail"
 msgstr "E-Mail"
 
 msgid "email"
-msgstr "E-Mail\""
+msgstr "E-Mail"
 
 msgid "episode: %s"
 msgstr "Episode: %s"
@@ -4207,3 +4207,30 @@ msgstr ""
 
 msgid "Wrong version: [%s]."
 msgstr "Falsche Version: [%s]."
+
+msgid "Movies and series"
+msgstr "Filme und Serien"
+
+msgid "Cartoons and anime"
+msgstr "Cartoons und Anime"
+
+msgid "Documentary"
+msgstr "Dokumentationen"
+
+msgid "Science"
+msgstr "Wissenschaft"
+
+msgid "Hungarian"
+msgstr "Ungarisch"
+
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgid "Greek"
+msgstr "Griechisch"
+
+msgid "Swedish"
+msgstr "Schwedisch"
+
+msgid "Balkans"
+msgstr "Balkanromanisch"
