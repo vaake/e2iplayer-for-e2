@@ -4,7 +4,8 @@
 ###################################################
 from Plugins.Extensions.IPTVPlayer.components.iptvplayerinit import TranslateTXT as _
 from Plugins.Extensions.IPTVPlayer.components.ihost import CHostBase, CBaseHostClass
-from Plugins.Extensions.IPTVPlayer.tools.iptvtools import printDBG, printExc, byteify, rm
+from Plugins.Extensions.IPTVPlayer.tools.iptvtools import printDBG, printExc, rm
+from Plugins.Extensions.IPTVPlayer.libs.e2ijson import loads as json_loads
 
 # needed for option bbc_use_web_proxy definition
 from Plugins.Extensions.IPTVPlayer.libs.youtube_dl.extractor.bbc import BBCCoUkIE
@@ -81,7 +82,7 @@ class BBCiPlayer(CBaseHostClass):
 
         title = cItem['title'].lower()
 
-        json_data = byteify(self.scrapeJSON(data))
+        json_data = self.scrapeJSON(data)
         if json_data:
             try:
                 uniqueTab = []
@@ -204,7 +205,7 @@ class BBCiPlayer(CBaseHostClass):
             printDBG("Failed to get page.")
             return
 
-        json_data = byteify(self.scrapeJSON(data))
+        json_data = self.scrapeJSON(data)
         if json_data:
             try:
                 for item in json_data['navigation']['items'][1]['subItems']:
@@ -357,7 +358,7 @@ class BBCiPlayer(CBaseHostClass):
         
         title = cItem['title'].lower()
 
-        json_data = byteify(self.scrapeJSON(data))
+        json_data = self.scrapeJSON(data)
         if json_data:
             try:
                 tleo_id = json_data['episode']['tleoId']
@@ -486,7 +487,7 @@ class BBCiPlayer(CBaseHostClass):
             match = re.search(r'window.__IPLAYER_REDUX_STATE__ = (.*?);\s*</script>', html, re.DOTALL)
         if match:
             data = match.group(1)
-            json_data = json.loads(data)
+            json_data = json_loads(data)
             if json_data:
                 if format == 1:
                     if 'appStoreState' in json_data:
@@ -507,8 +508,7 @@ class BBCiPlayer(CBaseHostClass):
                 sts, data = self.cm.getPage(jsonurl, self.defaultParams)
                 if sts:
                     printDBG("JSON page retrieved")
-                    json_data = json.loads(data)
-                    json_data = json_data.get('programme')
+                    json_data = json_loads(data)['programme']
                    
         return json_data
 
@@ -519,7 +519,7 @@ class BBCiPlayer(CBaseHostClass):
         sts, data = self.cm.getPage(cItem['url'], self.defaultParams)
         if not sts: return retTab
         
-        json_data = byteify(self.scrapeJSON(data))
+        json_data = self.scrapeJSON(data)
         if json_data:
             try:
                 uniqueTab = []
