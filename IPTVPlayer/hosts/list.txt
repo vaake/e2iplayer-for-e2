@@ -35,6 +35,7 @@ hostdarshowcom
 hostddl
 hostdel
 hostdixmax
+hostdplayit
 hostdokumentalnenet
 hostdpstreamingcx
 hostdrdk

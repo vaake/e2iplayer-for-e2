@@ -482,6 +482,8 @@ class Raiplay(CBaseHostClass):
         
         CBaseHostClass.handleService(self, index, refresh, searchPattern, searchType)
 
+        self.informAboutGeoBlockingIfNeeded('IT')
+
         name     = self.currItem.get("name", '')
         category = self.currItem.get("category", '')
         mode     = self.currItem.get("mode", '')
