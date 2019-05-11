@@ -137,6 +137,7 @@ hostplusdede
 hostputlockertvto
 hostquesttvcouk
 hostradiostacja
+hostraiplay
 hostrtbfbe
 hostrteieplayer
 hostrtlmost
