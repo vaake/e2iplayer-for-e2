@@ -157,7 +157,7 @@ class Dplayit(CBaseHostClass):
                         title = u'{0} ({1} {2} - {3} {4})'.format(name, "Stagione", season_number, "Episodio", num_episode)
                         videoUrl=video["PlaybackInfoUrl"]
                         params=dict(cItem)
-                        params.update ({'title':title, 'desc': desc, 'video_id', video_id, 'url':videoUrl, 'icon': icon, 'category': 'video'})
+                        params.update ({'title':title, 'desc': desc, 'video_id': video_id, 'url':videoUrl, 'icon': icon, 'category': 'video'})
                         printDBG ("add video '%s' with playback info url '%s'" % (title,videoUrl)) 
             
                         self.addVideo(params)
